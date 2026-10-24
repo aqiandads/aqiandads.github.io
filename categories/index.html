@@ -186,6 +186,20 @@
         </transition>
         
     </div>
+    <script>
+        // 兜底：外部 CDN 拉不到时（Vue 没挂载），最多等 3.5 秒就把遮罩都摘掉，保证至少能看到内容
+        setTimeout(function () {
+            if (window.Vue) return; // Vue 正常加载时交给主题自己处理
+            var loading = document.getElementById("loading");
+            if (loading && loading.parentNode) loading.parentNode.removeChild(loading);
+            var preview = document.getElementById("preview");
+            if (preview) preview.style.display = "none";
+            var items = document.querySelector("#mobile-menu .items");
+            if (items) items.style.display = "none";
+            var main = document.getElementById("main");
+            if (main) main.classList.add("into-enter-active");
+        }, 3500);
+    </script>
     <script src="/js/main.js"></script>
     
 </body>

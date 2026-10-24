@@ -973,3 +973,33 @@ ol li {
         padding-left: 20px;
     }
 }
+
+/* ---------- 本地覆盖：默认背景 + 窄屏适配 ---------- */
+#home-head #home-background {
+    background-image: url("/images/aqiandadsBackground.jpg");
+}
+@media (max-width: 400px) {
+    #home-head #home-info,
+    #home-head #home-info .info,
+    #home-head #home-info .loop {
+        height: 260px;
+        width: 260px;
+    }
+    #home-head #home-info .info .wrap {
+        padding: 24px;
+    }
+    #home-head #home-info .info .wrap h1 {
+        font-size: 26px;
+    }
+    #home-head #home-info .info .wrap h3 {
+        font-size: 16px;
+    }
+    #home-head #home-info .info .wrap h5 {
+        font-size: 12px;
+    }
+    #footer #footer-wrap {
+        box-sizing: border-box;
+        overflow-wrap: anywhere;
+        padding: 0 14px;
+    }
+}
